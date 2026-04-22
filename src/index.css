@@ -1,24 +1,73 @@
 @import "tailwindcss";
 
 @theme {
-  --color-polish-sage: #3A4D39;
-  --color-polish-cream: #FDFCFB;
-  --color-polish-clay: #8B4513;
-  --color-polish-gold: #C5A059;
-  --color-polish-emergency: #9B2C2C;
-  --color-polish-ink: #1A1A1A;
+  /* Dundas West brand colors — warm teal-navy + coral accents */
+  --color-dw-navy: #1B3A4B;
+  --color-dw-cream: #FAF8F5;
+  --color-dw-teal: #2A7B88;
+  --color-dw-coral: #D4764E;
+  --color-dw-gold: #C5A059;
+  --color-dw-emergency: #9B2C2C;
+  --color-dw-ink: #1A1A1A;
 
   --font-display: "Inter", system-ui, sans-serif;
   --font-serif: "Cormorant Garamond", serif;
   
   --shadow-polish: 0 4px 12px rgba(0, 0, 0, 0.05);
   --shadow-emergency: 0 4px 12px rgba(155, 44, 44, 0.3);
-  --shadow-book: 0 4px 12px rgba(139, 69, 19, 0.2);
+  --shadow-book: 0 4px 12px rgba(42, 123, 136, 0.2);
 }
 
 @layer base {
   body {
-    @apply bg-polish-cream text-polish-ink antialiased selection:bg-polish-clay selection:text-white;
+    @apply bg-dw-cream text-dw-ink antialiased selection:bg-dw-coral selection:text-white;
+  }
+
+  /* Visible focus rings for keyboard navigation (WCAG 2.1) */
+  *:focus-visible {
+    outline: 3px solid var(--color-dw-coral);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Skip to main content link for keyboard/screen reader users */
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 16px;
+    z-index: 100;
+    padding: 12px 24px;
+    background: var(--color-dw-navy);
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 0 0 8px 8px;
+    text-decoration: none;
+    transition: top 0.2s ease;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
+
+  /* Card base styling */
+  .card {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+  }
+}
+
+/* Respect prefers-reduced-motion (WCAG accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
