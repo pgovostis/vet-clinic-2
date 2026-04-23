@@ -62,12 +62,12 @@ export default function App() {
 
       <main id="main-content">
         {/* Hero */}
-        <section className="relative h-screen w-full overflow-hidden flex items-center" aria-label="Hero">
+        <section className="relative min-h-[100svh] w-full overflow-hidden flex items-center pt-24 md:pt-0" aria-label="Hero">
           <div className="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?q=80&w=2070&auto=format&fit=crop" alt="Happy dog in warm light" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             <div className="absolute inset-0 bg-gradient-to-r from-dw-navy/90 via-dw-navy/60 to-transparent"></div>
           </div>
-          <div className="relative z-10 px-12 md:px-24 max-w-3xl">
+          <div className="relative z-10 px-6 sm:px-12 md:px-24 max-w-3xl mt-12 md:mt-0">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
               <span className="text-dw-gold uppercase tracking-[0.3em] text-xs font-bold mb-6 block">{S.tagBadge}</span>
               <h1 className="font-serif text-5xl md:text-7xl text-white leading-[1.1] mb-6 drop-shadow-lg">{S.heroHeadline}</h1>
@@ -88,7 +88,7 @@ export default function App() {
 
         {/* About */}
         <section id="about" className="bg-dw-cream py-24 px-6 md:px-12">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
             <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative aspect-square overflow-hidden rounded-[2.5rem] shadow-2xl">
               <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?q=80&w=2071&auto=format&fit=crop" alt="Vet caring for a pet" className="absolute inset-0 w-full h-full object-cover" referrerPolicy="no-referrer" />
             </motion.div>
@@ -112,7 +112,7 @@ export default function App() {
         {/* Services */}
         <section id="services" className="py-24 px-6 md:px-12 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-12 mb-12 md:mb-20">
               <div>
                 <h3 className="text-dw-teal font-display font-bold uppercase tracking-[0.3em] text-xs mb-6">Specialized Care</h3>
                 <h2 className="font-serif text-5xl md:text-7xl">Two hospitals. One team.</h2>
@@ -121,7 +121,7 @@ export default function App() {
             </div>
             <div className="grid md:grid-cols-2 gap-10">
               {/* Dog Card */}
-              <motion.div whileHover={{ y: -8 }} className="card relative overflow-hidden p-12 aspect-[4/3] flex flex-col justify-end group cursor-pointer">
+              <motion.div whileHover={{ y: -8 }} className="card relative overflow-hidden p-8 sm:p-10 md:p-12 min-h-[450px] md:min-h-0 md:aspect-[4/3] flex flex-col justify-end group cursor-pointer">
                 <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=2070&auto=format&fit=crop" alt="Dog" className="absolute inset-0 w-full h-full object-cover opacity-10 grayscale group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
                 <div className="relative z-10">
                   <div className="w-16 h-16 bg-dw-cream rounded-full mb-8 flex items-center justify-center shadow-sm"><Dog size={28} className="text-dw-navy" /></div>
@@ -132,7 +132,7 @@ export default function App() {
                 </div>
               </motion.div>
               {/* Cat Card */}
-              <motion.div whileHover={{ y: -8 }} className="card relative overflow-hidden p-12 aspect-[4/3] flex flex-col justify-end group cursor-pointer">
+              <motion.div whileHover={{ y: -8 }} className="card relative overflow-hidden p-8 sm:p-10 md:p-12 min-h-[450px] md:min-h-0 md:aspect-[4/3] flex flex-col justify-end group cursor-pointer">
                 <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop" alt="Cat" className="absolute inset-0 w-full h-full object-cover opacity-10 grayscale group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
                 <div className="relative z-10">
                   <div className="w-16 h-16 bg-dw-cream rounded-full mb-8 flex items-center justify-center shadow-sm"><Cat size={28} className="text-dw-teal" /></div>
@@ -178,7 +178,7 @@ export default function App() {
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               {TESTIMONIALS.map((t, i) => (
-                <div key={i} className="card p-10 bg-dw-cream/30 flex flex-col hover:bg-dw-cream hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-pointer" role="article" aria-label={`Testimonial from ${t.name}`}>
+                <div key={i} className="card p-6 sm:p-8 md:p-10 bg-dw-cream/30 flex flex-col hover:bg-dw-cream hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-pointer" role="article" aria-label={`Testimonial from ${t.name}`}>
                   <div className="flex gap-1 text-dw-gold mb-8">{[...Array(5)].map((_, j) => <Star key={j} size={14} fill="currentColor" />)}</div>
                   <blockquote className="font-serif text-xl italic text-gray-700 leading-relaxed mb-8 flex-1">"{t.story}"</blockquote>
                   <div>
@@ -196,7 +196,7 @@ export default function App() {
           <section id="store" className="py-24 px-6 md:px-12 bg-dw-cream">
             <div className="max-w-7xl mx-auto">
               <div className="card p-1 pb-1 border-dashed border-2 border-dw-teal/20 bg-white">
-                <div className="p-16 flex flex-col md:flex-row items-center gap-16">
+                <div className="p-8 sm:p-12 md:p-16 flex flex-col md:flex-row items-center gap-8 md:gap-16">
                   <div className="flex-1 space-y-8 text-center md:text-left">
                     <h3 className="text-dw-coral font-display font-bold uppercase tracking-[0.2em] text-[10px]">{S.storePartnerName} Partner</h3>
                     <h2 className="font-serif text-5xl md:text-7xl">Shop from home.</h2>
