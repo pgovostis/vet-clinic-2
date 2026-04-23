@@ -62,7 +62,7 @@ export default function App() {
 
       <main id="main-content">
         {/* Hero */}
-        <section className="relative min-h-[100svh] w-full overflow-hidden flex items-center pt-24 md:pt-0" aria-label="Hero">
+        <section className="relative min-h-[100svh] w-full overflow-hidden flex items-center pt-28 pb-16 md:pt-0 md:pb-0" aria-label="Hero">
           <div className="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?q=80&w=2070&auto=format&fit=crop" alt="Happy dog in warm light" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             <div className="absolute inset-0 bg-gradient-to-r from-dw-navy/90 via-dw-navy/60 to-transparent"></div>
@@ -243,9 +243,11 @@ export default function App() {
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-4 gap-20 mb-24">
               <div className="space-y-8">
-                <div className="flex items-center gap-3">
-                  <img src={S.logoUrl} alt={`${S.businessName} logo`} className="h-8 w-auto brightness-0 invert" referrerPolicy="no-referrer" />
-                  <span className="font-serif text-xl font-semibold text-white tracking-tight">{S.shortName}</span>
+                <div className="flex items-center gap-4">
+                  <div className="bg-white/95 p-2 rounded-xl border border-white/20 shadow-sm">
+                    <img src={S.logoUrl} alt={`${S.businessName} logo`} className="h-8 w-auto" referrerPolicy="no-referrer" />
+                  </div>
+                  <span className="font-serif text-2xl font-semibold text-white tracking-tight">{S.shortName}</span>
                 </div>
                 <p className="text-white/60 text-sm font-light leading-relaxed">An award-winning veterinary hospital in Toronto's west end with dedicated cat-only and dog-only facilities.</p>
                 <div className="flex gap-4 text-dw-gold">
