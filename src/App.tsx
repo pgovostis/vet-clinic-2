@@ -24,7 +24,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img src={S.logoUrl} alt={`${S.businessName} logo`} className="h-10 w-auto" referrerPolicy="no-referrer" />
-            <span className="font-serif text-xl font-semibold text-dw-navy tracking-tight hidden sm:inline">{S.shortName}</span>
+            <span className="font-serif text-xl font-semibold text-dw-navy tracking-tight">{S.shortName}</span>
           </div>
           <div className="hidden md:flex items-center gap-10 font-display text-[13px] font-medium tracking-wide">
             <a href="#about" className="text-gray-500 hover:text-dw-coral transition-colors uppercase">About</a>
