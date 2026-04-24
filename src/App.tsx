@@ -62,12 +62,12 @@ export default function App() {
 
       <main id="main-content">
         {/* Hero */}
-        <section className="relative min-h-[100svh] w-full overflow-hidden flex items-center pt-28 pb-16 md:pt-0 md:pb-0" aria-label="Hero">
+        <section className="relative min-h-[100svh] w-full overflow-hidden flex items-center py-32 md:py-40" aria-label="Hero">
           <div className="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?q=80&w=2070&auto=format&fit=crop" alt="Happy dog in warm light" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             <div className="absolute inset-0 bg-gradient-to-r from-dw-navy/90 via-dw-navy/60 to-transparent"></div>
           </div>
-          <div className="relative z-10 px-6 sm:px-12 md:px-24 max-w-3xl mt-12 md:mt-0">
+          <div className="relative z-10 px-6 sm:px-12 md:px-24 max-w-3xl w-full">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
               <span className="text-dw-gold uppercase tracking-[0.3em] text-xs font-bold mb-6 block">{S.tagBadge}</span>
               <h1 className="font-serif text-5xl md:text-7xl text-white leading-[1.1] mb-6 drop-shadow-lg">{S.heroHeadline}</h1>
