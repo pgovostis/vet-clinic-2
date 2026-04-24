@@ -30,7 +30,7 @@ export default function App() {
             <a href="#about" className="text-gray-500 hover:text-dw-coral transition-colors uppercase">About</a>
             <a href="#team" className="text-gray-500 hover:text-dw-coral transition-colors uppercase">The Team</a>
             <a href="#services" className="text-gray-500 hover:text-dw-coral transition-colors uppercase">Services</a>
-            {S.storeEnabled && <a href={S.storeUrl} className="text-gray-500 hover:text-dw-coral transition-colors uppercase italic">{S.storePartnerName}</a>}
+            {S.storeEnabled && <a href="#store" className="text-gray-500 hover:text-dw-coral transition-colors uppercase italic">{S.storePartnerName}</a>}
           </div>
           <div className="hidden md:flex items-center gap-4">
             <button className="px-6 py-3 min-h-[44px] bg-dw-emergency text-white rounded-full text-[11px] font-bold uppercase tracking-widest shadow-emergency hover:brightness-110 transition-all cursor-pointer">After Hours</button>
@@ -51,6 +51,7 @@ export default function App() {
               <a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a>
               <a href="#team" onClick={() => setMobileMenuOpen(false)}>The Team</a>
               <a href="#services" onClick={() => setMobileMenuOpen(false)}>Services</a>
+              {S.storeEnabled && <a href="#store" onClick={() => setMobileMenuOpen(false)}>{S.storePartnerName}</a>}
               <div className="mt-8 flex flex-col gap-4">
                 <button className="w-full py-4 bg-dw-teal text-white rounded-full text-sm font-semibold uppercase cursor-pointer">Book Now</button>
                 <button className="w-full py-4 bg-dw-emergency text-white rounded-full text-sm font-semibold uppercase cursor-pointer">After Hours</button>
